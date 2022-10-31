@@ -1,32 +1,20 @@
-# contoh class sederhana
+class Product:
 
-class Mahasiswa:
-    nama = None
-    nim = None
+    # class attribute
+    matkul = "PBO"
     
-    def hello(self):
-        print(f'hallo {self.nama} {self.nim}')
+    #instance attribute
+    def __init__(self, ID_produk, Nama_Produk, Harga, Jumlah):
+        self.IDProduk = ID_produk
+        self.Nama_Produk = Nama_Produk
+        self.Harga = Harga
+        self.Jumlah = Jumlah
 
-ketrin = Mahasiswa()
-ketrin.nama = "ketrin"
-ketrin.nim = "123"
+# instantiate Mahasiswa class
+a = Product("teh botol", 123456789)
 
-ketrin.hello()
+# access the class attributes
+print("A tergabung dalam {}".format(a.__class__.matkul))
 
-class Abc:
-
-    def __init__(self, nama, nim):
-        self.nama = nama
-        self.nim = nim
-
-    def __del__(self):
-        print("delete")  
-
-    def data(self):
-        print("hello", self.nama, self.nim)
-
-a = Abc("Ketrin", "123")
-#print(a.__dict__)
-
-a.data()
-del a
+# access the instance attributes
+print("{} punya nim {}".format( a.IDProduk, a.Nama_Produk))
